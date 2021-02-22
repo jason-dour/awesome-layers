@@ -22,29 +22,34 @@
 
 ## Layers
 
+1. [Runtimes](#runtimes)
+1. [Utilities](#utilities)
+1. [Monitoring](#monitoring)
+1. [Security](#security)
+
 ### Runtimes
 
 | Name | ARN / Link | Compatible Runtimes |
 |------|------------|---------------------|
-| C++ (official) | Link: [awslabs/aws-lambda-cpp](https://github.com/awslabs/aws-lambda-cpp) | `provided` |
-| Rust (official) | Link: [awslabs/aws-lambda-rust-runtime](https://github.com/awslabs/aws-lambda-rust-runtime) | `provided` |
+| C++ (official) | Link: [`awslabs/aws-lambda-cpp`](https://github.com/awslabs/aws-lambda-cpp) | `provided` |
+| Rust (official) | Link: [`awslabs/aws-lambda-rust-runtime`](https://github.com/awslabs/aws-lambda-rust-runtime) | `provided` |
 | Bash | ARN: `arn:aws:lambda:<region>:744348701589:layer:bash:<version>`<br>Link: [`gkrizek/bash-lambda-layer`](https://github.com/gkrizek/bash-lambda-layer) | `provided` |
-| [Ballerina](https://ballerina.io/) | Link: [ballerina.io/deployment/aws-lambda](https://ballerina.io/deployment/aws-lambda/) | `provided` |
-| [Crystal](https://crystal-lang.org/) | Link: [lambci/crambda](https://github.com/lambci/crambda) | `provided` |
-| [Nim](https://nim-lang.org/) | Link: [lambci/awslambda.nim](https://github.com/lambci/awslambda.nim) | `provided` |
+| [Ballerina](https://ballerina.io/) | Link: [ballerina-platform/module-ballerinax-aws.lambda](https://github.com/ballerina-platform/module-ballerinax-aws.lambda) | `provided` |
+| [Crystal](https://crystal-lang.org/) | Link: [`lambci/crambda`](https://github.com/lambci/crambda) | `provided` |
+| [Nim](https://nim-lang.org/) | Link: [`lambci/awslambda.nim`](https://github.com/lambci/awslambda.nim) | `provided` |
 | Node.js v8 - N\|Solid | ARN: `arn:aws:lambda:<region>:800406105498:layer:nsolid-node-8:<version>`<br>Link: [accounts.nodesource.com/downloads/nsolid-lambda](https://accounts.nodesource.com/downloads/nsolid-lambda) | `provided` |
 | Node.js v10 | ARN: `arn:aws:lambda:<region>:553035198032:layer:nodejs10:<version>`<br>Link: [`lambci/node-custom-lambda`](https://github.com/lambci/node-custom-lambda) | `provided` |
 | Node.js v10 - N\|Solid | ARN: `arn:aws:lambda:<region>:800406105498:layer:nsolid-node-10:<version>`<br>Link: [accounts.nodesource.com/downloads/nsolid-lambda](https://accounts.nodesource.com/downloads/nsolid-lambda) | `provided` |
 | Node.js v12 | ARN: `arn:aws:lambda:<region>:553035198032:layer:nodejs12:<version>`<br>Link: [`lambci/node-custom-lambda`](https://github.com/lambci/node-custom-lambda) | `provided` |
-| Perl 5.3.0 | ARN: `arn:aws:lambda:<region>:445285296882:layer:perl-5-30-runtime:4`<br>Link:[`shogo82148/p5-aws-lambda`](https://github.com/shogo82148/p5-aws-lambda) - see links to other version and [Paws](https://metacpan.org/pod/Paws) builds in repo | `provided` |
+| Perl 5.30.1 | ARN: `arn:aws:lambda:<region>:445285296882:layer:perl-5-30-runtime:5`<br>Link:[`shogo82148/p5-aws-lambda`](https://github.com/shogo82148/p5-aws-lambda) - see links to other version and [Paws](https://metacpan.org/pod/Paws) builds in repo | `provided` |
 | PHP 7.1 & 7.3 | ARN: `arn:aws:lambda:<region>:887080169480:layer:php71:3`<br>Link:[`stackery/php-lambda-layer`](https://github.com/stackery/php-lambda-layer) | `provided` |
 | PHP 7.2 & 7.3<br>cli & fpm | ARN: [`arn:aws:lambda:<region>:209497400698:layer:php-73:<version>`](https://runtimes.bref.sh/)<br>Link:[`brefphp/bref`](https://github.com/brefphp/bref) | `provided` |
 | Pypy 3.5 | ARN: `arn:aws:lambda:<region>:146318645305:layer:pypy35:<version>`<br>Link: [IOpipe Pypy Layer](https://github.com/iopipe/lambda-runtime-pypy3.5) | `pypy3.5` |
 | Brainfuck | ARN: `arn:aws:lambda:<region>:444134189787:layer:brainfuck:1`<br>Built for fun, will not process events! | `provided` |
 | LOLCODE | ARN: `arn:aws:lambda:<region>:444134189787:layer:lolcode:1`<br>Built for fun, will not process events! | `provided` |
-| Java 11 | Link: [andthearchitect/aws-lambda-java-runtime](https://github.com/andthearchitect/aws-lambda-java-runtime) | `provided` |
+| Java 11 | Link: [`andthearchitect/aws-lambda-java-runtime`](https://github.com/andthearchitect/aws-lambda-java-runtime) | `provided` |
 | Haskell | ARN: `arn:aws:lambda:<YOUR REGION>:785355572843:layer:aws-haskell-runtime:2` <br>Link: [Getting Started with the Haskell AWS Lambda Runtime](https://medium.com/the-theam-journey/getting-started-with-the-haskell-aws-lambda-runtime-951b2322c7a3) | `provided` |
-| Swift | Link: [Amazon Linux Swift Layer](https://fabianfett.de/amazonlinux-swift) to be used with [swift-lambda-runtime](https://github.com/fabianfett/swift-lambda-runtime) | `provided` |
+| Swift | Link: [`swift-server/swift-aws-lambda-runtime`](https://github.com/swift-server/swift-aws-lambda-runtime/) | `provided` |
 
 
 ### Utilities
@@ -53,37 +58,47 @@
 |------|------------|---------------------|
 | Apache Tika | ARN: `arn:aws:lambda:us-east-1:764866452798:layer:apache-tika:1`<br>Link: [`shelfio/apache-tika-lambda-layer`](https://github.com/shelfio/apache-tika-lambda-layer) | all |
 | AWS CLI | Link: [`aws-samples/aws-lambda-layer-awscli`](https://github.com/aws-samples/aws-lambda-layer-awscli) | all |
-| [better-sqlite3](https://github.com/JoshuaWise/better-sqlite3) | ARN: `arn:aws:lambda:us-east-1:284387765956:layer:BetterSqlite3:4`<br>Link: [`seanfisher/better-sqlite3-lambda-layer`](https://github.com/seanfisher/better-sqlite3-lambda-layer) | `nodejs8.10` |
+| AWS Data Wrangler | Link:[`awslabs/aws-data-wrangler`](https://github.com/awslabs/aws-data-wrangler) ([`Releases`](https://github.com/awslabs/aws-data-wrangler/releases)) | `python3.6` `python3.7` `python3.8` |
+| [better-sqlite3](https://github.com/JoshuaWise/better-sqlite3) | ARN: `arn:aws:lambda:us-east-1:284387765956:layer:BetterSqlite3:8`<br>Link: [`seanfisher/better-sqlite3-lambda-layer`](https://github.com/seanfisher/better-sqlite3-lambda-layer) | `nodejs12.x` |
+| Calibre | Link: [`gipsh/aws-calibre-layer`](https://github.com/gipsh/aws-calibre-layer) | all |
 | chrome-aws-lambda | ARN: `arn:aws:lambda:us-east-1:764866452798:layer:chrome-aws-lambda:4`<br>Link: [`shelfio/chrome-aws-lambda-layer`](https://github.com/shelfio/chrome-aws-lambda-layer) | all |
 | ClamAV | Link: [`kindlyops/lambda-clamav-layer`](https://github.com/kindlyops/lambda-clamav-layer) | all |
 | FFmpeg/FFprobe | ARN: `arn:aws:lambda:us-east-1:145266761615:layer:ffmpeg:4`<br>Link: [`serverlesspub/ffmpeg-aws-lambda-layer`](https://github.com/serverlesspub/ffmpeg-aws-lambda-layer) | all |
+| Flyway | ARN: `arn:aws:lambda:us-east-2:044220569105:layer:flyway:4`<br>Link: [`gitlab.com/ourstreets/flyway-lambda`](https://gitlab.com/ourstreets/flyway-lambda) | java8 |
 | GDAL + PDAL | Link: [`arn:aws:lambda:us-east-1:163178234892:layer:pdal:15`](https://github.com/PDAL/lambda) | all |
 | GeoIP | Link: [`dschep/geoip-lambda-layer`](https://github.com/dschep/geoip-lambda-layer) | all |
 | Ghostscript | ARN: `arn:aws:lambda:us-east-1:764866452798:layer:ghostscript:1`<br>Link: [`shelfio/ghostscript-lambda-layer`](https://github.com/shelfio/ghostscript-lambda-layer) | all |
 | Git + SSH | ARN: `arn:aws:lambda:<region>:553035198032:layer:git:<version>`<br>Link: [`lambci/git-lambda-layer`](https://github.com/lambci/git-lambda-layer) | all |
 | GraphicsMagick | ARN: `arn:aws:lambda:<region>:175033217214:layer:graphicsmagick:<version>`<br>Link: [`rpidanny/gm-lambda-layer`](https://github.com/rpidanny/gm-lambda-layer) | all |
 | headless chromium with CJK fonts | Link: [`pahud/lambda-layer-headless-chromium`](https://github.com/pahud/lambda-layer-headless-chromium) | all |
+| Headless PhantomJS | ARN: `arn:aws:lambda:us-west-2:699054759624:layer:phantom-js:1`<br> Link: [`shivtej1505/phantom-js-lambda-layer`](https://github.com/shivtej1505/phantom-js-lambda-layer) | all |
 | Hugo | Link: [`jason-dour/hugo-aws-lambda-layer`](https://github.com/jason-dour/hugo-aws-lambda-layer) | all |
 | kubectl for Amazon EKS | Link: [`aws-samples/aws-lambda-layer-kubectl`](https://github.com/aws-samples/aws-lambda-layer-kubectl) | all |
 | LibreOffice | ARN: `arn:aws:lambda:us-east-1:764866452798:layer:libreoffice:7`<br>Link: [`shelfio/libreoffice-lambda-layer`](https://github.com/shelfio/libreoffice-lambda-layer) | all |
 | libvips | Link: [`customink/ruby-vips-lambda`](https://github.com/customink/ruby-vips-lambda) Built for Ruby FFI but should work for all. | all |
+| ModSecurity | Link: [`Zeerg/modsecurity-layer`](https://github.com/Zeerg/modsecurity-layer) | `python3.6` `python3.7` |
 | MySQL PHP 7.1 | Link: [`aiir/php71-mysql-aws-lambda-layer`](https://github.com/aiir/php71-mysql-aws-lambda-layer) | [`stackery/php-lambda-layer`](https://github.com/stackery/php-lambda-layer) |
 | Net-SNMP Tools | Link: [`jason-dour/net-snmp-aws-lambda-layer`](https://github.com/jason-dour/net-snmp-aws-lambda-layer) | all |
 | OpenSSL | ARN: `arn:aws:lambda:us-east-1:034541671702:layer:openssl-lambda:1`<br>Link: [`alexandredavi/openssl-lambda-layer`](https://github.com/alexandredavi/openssl-lambda-layer) | all |
 | OR-Tools | Link: [`matheusmessora/or-tools-layer`](https://github.com/matheusmessora/or-tools-layer) | `python3.6` |
+| pandas-gbq | ARN: `arn:aws:lambda:us-east-1:251566558623:layer:python37-layer-pandas-gbq:1`<br>Link: [`vbalasu/pandas-gbq-layer`](https://github.com/vbalasu/pandas-gbq-layer) <br>Includes pandas, a versatile data exploration tool that builds on numpy. Also includes pandas-gbq for reading and writing from/to Google BigQuery | `python3.7` |
 | Pandoc | ARN: `arn:aws:lambda:us-east-1:145266761615:layer:pandoc:1`<br>Link: [`serverlesspub/pandoc-aws-lambda-binary`](https://github.com/serverlesspub/pandoc-aws-lambda-binary) | all |
 | paramiko  | Link: [`jetbridge/paramiko-lambda-layer`](https://github.com/jetbridge/paramiko-lambda-layer)  | `python3.7` |
+| Poppler | Link:[`jeylabs/aws-lambda-poppler-layer`](https://github.com/jeylabs/aws-lambda-poppler-layer) | all |
 | PostgreSQL libpq | https://github.com/DrLuke/postgres-libpq-aws-lambda-layer | all |
 | Puppeteer | ARN: `arn:aws:lambda:us-east-1:085108115628:layer:chrome:6`<br>Link: [`RafalWilinski/serverless-puppeteer-layers`](https://github.com/RafalWilinski/serverless-puppeteer-layers) | all |
 | psycopg2  | Link: [`jetbridge/psycopg2-lambda-layer`](https://github.com/jetbridge/psycopg2-lambda-layer)  | `python3.6` `python3.7` |
 | PySNMP | Link: [`jason-dour/pysnmp-aws-lambda-layer`](https://github.com/jason-dour/pysnmp-aws-lambda-layer) | `python3.6` `python3.7` `python3.8` |
-| Python Toolkit | Link: [`keithrozario/Klayers`](https://github.com/keithrozario/Klayers)<br>Python packages incl. requests, aiohttp, pyOpenSSL etc.| `python3.7`|
+| Python Toolkit | Link: [`keithrozario/Klayers`](https://github.com/keithrozario/Klayers)<br>Python packages incl. requests, aiohttp, pyOpenSSL etc.| `python3.8`|
 | rsvg-convert | ARN: `arn:aws:lambda:us-east-1:145266761615:layer:rsvg-convert:2`<br>Link: [`serverlesspub/rsvg-convert-aws-lambda-binary`](https://github.com/serverlesspub/rsvg-convert-aws-lambda-binary) | all |
+| scikit-learn | ARN: `arn:aws:lambda:us-east-1:446751924810:layer:python-3-7-scikit-learn-0-23-1:2`<br>Link: [`model-zoo/scikit-learn-lambda`](https://github.com/model-zoo/scikit-learn-lambda) | `python3.6` `python3.7` `python3.8` |
+| Selenium & Chromium for Python | Link: [`vittorio-nardone/selenium-chromium-lambda`](https://github.com/vittorio-nardone/selenium-chromium-lambda)<br>Includes lambda optimized Chromium ver. 86.0.4240.0 and Selenium ver. 3.14 | `python3.6` `python3.7` | 
 | SoX | ARN: `arn:aws:lambda:us-east-1:145266761615:layer:sox:1`<br>Link: [`serverlesspub/sox-aws-lambda-binary`](https://github.com/serverlesspub/sox-aws-lambda-binary) | all |
 | SQLite Python | Link: [`dschep/sqlite-lambda-layer`](https://github.com/dschep/sqlite-lambda-layer) | `python3.6` |
 | Tesseract | Link: [`bweigel/aws-lambda-tesseract-layer`](https://github.com/bweigel/aws-lambda-tesseract-layer) | all |
+| Tex Live (LaTeX) | Link: [`https://github.com/serverlesspub/latex-aws-lambda-layer`](https://github.com/serverlesspub/latex-aws-lambda-layer) | `nodejs12.x, nodejs10.x, python3.8, java11` |
+| Unzip | Link: [`vpayette/unzip-aws-lambda-layer`](https://github.com/vpayette/unzip-aws-lambda-layer) | all |
 | Zip | Link: [`morugu/zip-aws-lambda-layer`](https://github.com/morugu/zip-aws-lambda-layer) | all |
-
 
 ### Monitoring
 
@@ -92,6 +107,8 @@
 | Datadog | ARN: `arn:aws:lambda:<region>:464622532012:layer:Datadog-Python37:1`<br>Link: [Datadog's Lambda Layer](https://www.datadoghq.com/blog/datadog-lambda-layer/) | `python2.7, python3.6, python3.7`, |
 | Epsagon Node | ARN: `arn:aws:lambda:<region>:066549572091:layer:epsagon-node-layer:1`<br>Link: [Epsagon Node Layer](https://epsagon.com/blog/bring-your-epsagon-layer-to-aws-lambda/) | `nodejs6.10, nodejs8.10` |
 | Epsagon Python | ARN: `arn:aws:lambda:<region>:066549572091:layer:epsagon-python-layer:1`<br>Link: [Epsagon Python Layer](https://epsagon.com/blog/bring-your-epsagon-layer-to-aws-lambda/) | `python2.7, python3.6, python3.7` |
+| Instana Node.js | ARN: `arn:aws:lambda:<region>:410797082306:layer:instana-nodejs:<version>`<br>Link: [Instana Node.js Layer](https://docs.instana.io/ecosystem/aws-lambda/nodejs/#the-instana-lambda-layers-for-nodejs-runtimes) | `nodejs8.10, nodejs10.x, nodejs12.x` |
+| Instana Python | ARN: `arn:aws:lambda:<region>:410797082306:layer:instana-python:<version>`<br>Link: [Instana Python Layer](https://docs.instana.io/ecosystem/aws-lambda/python/#the-instana-lambda-layers-for-python-runtimes) | `python2.7, python3.6, python3.7, python3.8` |
 | IOpipe Node | ARN: `arn:aws:lambda:<region>:146318645305:layer:IOpipeNodeJS810:<version>`<br>Link: [IOpipe Node Layer](https://github.com/iopipe/iopipe-js/releases) | `nodejs6.10, nodejs8.10` |
 | IOpipe Python | ARN: `arn:aws:lambda:<region>:146318645305:layer:IOpipePython:<version>`<br>Link: [IOpipe Python Layer](https://github.com/iopipe/iopipe-python/releases) | `python2.7, python3.6, python3.7` |
 | IOpipe Java | ARN: `arn:aws:lambda:<region>:146318645305:layer:IOpipeJava8:<version>`<br>Link: [IOpipe Java Layer](https://github.com/iopipe/iopipe-java/releases) | `java8` |
